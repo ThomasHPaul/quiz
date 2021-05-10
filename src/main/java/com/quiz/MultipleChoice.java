@@ -22,6 +22,7 @@
  * THE SOFTWARE.
  */
 package com.quiz;
+import java.util.ArrayList;
 
 /**
  *
@@ -30,14 +31,21 @@ package com.quiz;
 public class MultipleChoice extends Question {
     public MultipleChoice(String questionText, String answer, String choiceA, String choiceB, String choiceC, String choiceD) {
         super(questionText, answer);
-        this.choiceA = choiceA;
-        this.choiceB = choiceB;
-        this.choiceC = choiceC;
-        this.choiceD = choiceD;
+        this.multChoiceQuestion.add(questionText);
+        this.multChoiceQuestion.add(choiceA);
+        this.multChoiceQuestion.add(choiceB);
+        this.multChoiceQuestion.add(choiceC);
+        this.multChoiceQuestion.add(choiceD);
     }
     
-    private String choiceA = null;
-    private String choiceB = null;
-    private String choiceC = null;
-    private String choiceD = null;
+    @Override
+    public String toString() {
+        String questionWithOptions = "";
+        for(String line : multChoiceQuestion) {
+            questionWithOptions += line + System.lineSeparator();
+        }
+        return questionWithOptions;
+    }
+    
+    private ArrayList<String> multChoiceQuestion = new ArrayList<String>();
 }

@@ -31,12 +31,13 @@ import java.util.*;
  */
 public class Main {
     public static void main(String[] args) {
-        String choiceA = "George Washington";
-        String choiceB = "Abraham Lincoln";
-        String choiceC = "Donald Trump";
-        String choiceD = "Harambe";
-        String answer = choiceA;
         String questionString = "Who was the first President of the USA?";
+        String choiceA = "A: George Washington";
+        String choiceB = "B: Abraham Lincoln";
+        String choiceC = "C: Donald Trump";
+        String choiceD = "D: Harambe";
+        String answer = "A";
+        
         
         String trueFalseText = "True(T) or False(F): The sky is blue.";
         String trueFalseAnswer = "F";
