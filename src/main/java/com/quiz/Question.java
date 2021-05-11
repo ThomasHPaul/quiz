@@ -35,7 +35,13 @@ public class Question {
     }
     
     public int checkAnswer(String guess) {
-        if ( this.answer.equals(guess) ) {
+        String cleanInput = guess.toUpperCase().trim();
+        switch (cleanInput) {
+            case "FALSE" -> cleanInput = "F";
+            case "TRUE" -> cleanInput = "T";
+            default -> cleanInput = "-1";
+        }
+        if ( this.answer.equals(cleanInput) ) {
             return 1;
         }
         else {
